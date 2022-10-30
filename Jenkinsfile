@@ -30,7 +30,7 @@ pipeline {
     stage('ansible playbook') {
 			steps{
         scripts{
-          sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml "
+          sh "ansible-playbook /home/vagrant/Myapp/ansible/build.yml -i /home/vagrant/Myapp/ansible/inventory/host.yml "
         }
 			}
       }
