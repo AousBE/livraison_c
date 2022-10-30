@@ -15,7 +15,7 @@ pipeline {
 	  stage('Build new image') {
 		    steps{
 			    withDockerRegistry([credentialsId: "docker-credentials", url: ""]) {
-			    sh "docker build -t aous1/aous_cicd_front:$BUILD_NUMBER ."
+			    sh "docker build -t aous1/aous_livraison_front:$BUILD_NUMBER ."
 			    
 		    }
 		    }
@@ -23,7 +23,7 @@ pipeline {
 	  stage('Push new image') {
 			steps{
 		withDockerRegistry([credentialsId: "docker-credentials", url: ""]) {
-  		sh "docker push aous1/aous_cicd_front:$BUILD_NUMBER"
+  		sh "docker push aous1/aous_livraison_front:$BUILD_NUMBER"
 	}
 			}
 		}
